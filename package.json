@@ -1,0 +1,9 @@
+{
+  "name": "ielts-desk-companion",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test src/engine.test.js",
+    "start": "python3 -m http.server 8765"
+  }
+}

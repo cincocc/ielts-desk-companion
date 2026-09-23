@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>雅思学习计划控制台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="desk">
+      <header class="mast">
+        <p class="eyebrow" id="eyebrow"></p>
+        <h1 id="mast-title">今晚怎么学</h1>
+        <p class="mast-sub" id="mast-sub"></p>
+        <nav class="nav" id="nav"></nav>
+      </header>
+      <div id="view"></div>
+    </div>
+
+    <dialog id="setup">
+      <form method="dialog" class="setup-card" id="setup-form">
+        <h2>从哪天开始算第 1 周？</h2>
+        <p>之后的册号和 Test 由开始日 + 打卡推算。真题仍在纸上或手机 App 完成。</p>
+        <label>
+          计划开始日
+          <input type="date" name="startDate" required />
+        </label>
+        <p class="hint" id="setup-hint"></p>
+        <button type="submit" class="btn primary">进入今晚怎么学</button>
+      </form>
+    </dialog>
+
+    <dialog id="restart">
+      <form method="dialog" class="setup-card" id="restart-form">
+        <h2>重新开始学习计划？</h2>
+        <p>此操作会把当前周拉回第 1 周，并清空<strong>学习日期当天</strong>的打卡。历史打卡和词汇会保留。材料挂钩已经不再使用。</p>
+        <label>
+          输入「重新开始」确认
+          <input name="confirm" autocomplete="off" />
+        </label>
+        <div class="actions">
+          <button type="submit" value="cancel" class="btn">取消</button>
+          <button type="submit" value="ok" class="btn danger">继续</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
